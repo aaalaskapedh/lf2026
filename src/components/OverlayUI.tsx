@@ -16,14 +16,14 @@ interface ItineraryItem {
 const ITINERARY: ItineraryItem[] = [
   { date: '24 April', day: 'Friday', performer: 'Snehi Live', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/snehi-live.png' },
   { date: '24 April', day: 'Friday', performer: 'DJ Tuhina', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-tuhina.png' },
-  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry' },
-  { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band' },
-  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'comedy' },
-  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj' },
-  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy' },
-  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band' },
-  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8 PM Onwards', venue: 'BBC', type: 'concert' },
-  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '8 PM Onwards', venue: 'BBC', type: 'dj' },
+  { date: '25 April', day: 'Saturday', performer: 'Kavi Samelan', time: '8 PM Onwards', venue: 'Auditorium', type: 'poetry', image: '/images/artists/kavi-samelan.png' },
+  { date: '25 April', day: 'Saturday', performer: 'Naptune', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/neptune.png' },
+  { date: '25 April', day: 'Saturday', performer: 'Anuj Sharma', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/anuj-sharma.png' },
+  { date: '25 April', day: 'Saturday', performer: 'DJ Kikie', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-kikie.png' },
+  { date: '26 April', day: 'Sunday', performer: 'Rajat Chauhan', time: '8 PM Onwards', venue: 'BBC', type: 'comedy', image: '/images/artists/rajat-chauhan.png' },
+  { date: '26 April', day: 'Sunday', performer: 'Harmony of Pine', time: '8 PM Onwards', venue: 'BBC', type: 'band', image: '/images/artists/harmony-of-pine.png' },
+  { date: '26 April', day: 'Sunday', performer: 'Simar Kaur', time: '8 PM Onwards', venue: 'BBC', type: 'concert', image: '/images/artists/simar-kaur.png' },
+  { date: '26 April', day: 'Sunday', performer: 'DJ Ana', time: '8 PM Onwards', venue: 'BBC', type: 'dj', image: '/images/artists/dj-ana.png' },
 ]
 
 const TYPE_COLORS: Record<string, string> = {
@@ -343,7 +343,19 @@ export default function OverlayUI() {
                           {/* Artist image */}
                           {item.image && (
                             <div className="itin-perf-image">
-                              <img src={item.image} alt={item.performer} loading="lazy" />
+                              <img
+  src={item.image}
+  alt={item.performer}
+  loading="lazy"
+  className={
+  item.performer === 'Naptune'
+    ? 'fit-center'
+    : item.performer === 'Kavi Samelan' ||
+    item.performer === 'Harmony of Pine'
+    ? 'fit-bottom'
+    : 'fit-bottom'
+}
+/>
                             </div>
                           )}
 

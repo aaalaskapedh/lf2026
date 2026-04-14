@@ -740,6 +740,17 @@ body {
   transform: scale(1.08);
 }
 
+/* Custom image fit classes for selected artists */
+.fit-center{
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.fit-bottom{
+  object-fit: contain !important;
+  object-position: bottom center !important;
+}
+
 /* Card content */
 .itin-perf-content {
   padding: 1.25rem 1.5rem;
